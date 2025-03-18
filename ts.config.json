@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "jsx": "react-jsx"
+  },
+
+  "resolve": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  }
+}

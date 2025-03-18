@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import { store } from "./store/index.ts";
+import ContactList from "./components/ContactList.tsx";
+import ContactForm from "./components/ContactForm.tsx";
+import { GlobalStyle, Container, Title, AppWrapper } from "./styles.ts";
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <GlobalStyle />
+      <AppWrapper>
+        <Container>
+          <Title>Lista de Contatos</Title>
+          <ContactForm />
+          <ContactList />
+        </Container>
+      </AppWrapper>
+    </Provider>
   );
 }
 
